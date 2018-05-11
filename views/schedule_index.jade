@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  .w3-padding-32
+  .w3-container.w3-animate-opacity
+    .w3-row.w3-center
+      .w3-col(style='width:10%').w3-container
+      .w3-col(style='width:80%')
+        .w3-row.w3-border-bottom.w3-hide-small
+          .w3-col.w3-third
+            p Home
+          .w3-col.w3-third
+            p Time/Score
+          .w3-col.w3-third
+            p Away
+        - each d in data
+          a(href="/schedule/#{d.id}", style="color:black")
+            .w3-row.w3-border-bottom.w3-hover-light-grey
+              .w3-col.w3-third
+                .w3-row
+                  .w3-col.w3-quarter.w3-padding-16
+                    img(src='/images/#{d.home_team}.PNG', style="max-width:50%")
+                  .w3-col.w3-threequarter.w3-padding-16
+                    p #{d.home_team}
+              - if (d.home_score == undefined && d.away_score == undefined)
+                .w3-col.w3-third.w3-padding-16
+                  p.w3-tag.w3-black #{d.date}
+                  p.w3-tag.w3-black #{d.time}
+              - else
+                .w3-col.w3-third.w3-padding-16
+                  p #{d.home_score} - #{d.away_score}
+              .w3-col.w3-third
+                .w3-row
+                  .w3-col.w3-threequarter.w3-padding-16
+                    p #{d.away_team}
+                  .we-col.w3-quarter.w3-padding-16.w3-center
+                    img(src='/images/#{d.away_team}.PNG', style="max-width:50%")
+                
+  .w3-container.w3-black.w3-center.w3-padding-64.w3-margin-top
+      a.w3-button.w3-border.w3-border-white(href='#').w3-large Back to Top
+      

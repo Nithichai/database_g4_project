@@ -1,0 +1,44 @@
+extends layout
+
+block content
+    .bg-index.w3-text-white.w3-center.w3-animate-opacity(style="overflow: auto")
+        .w3-black.w3-opacity-min
+            .w3-padding-64
+                .w3-padding-64
+                    .w3-padding-64
+                        .w3-padding-64
+                            h3.w3-jumbo OVERWATCH LEAGUE
+                            p
+                                button.w3-xlarge.w3-button.w3-border.w3-white-border.w3-center#start Start
+    .w3-container#about
+        .w3-row-padding.w3-padding-64.w3-container
+            .w3-twothird
+                h1 WELCOME TO THE OVERWATCH LEAGUE
+                h5.w3-padding-32
+                    The Overwatch League, the first major global esports league with city-based teams, was designed to celebrate the best of the best in the hit Blizzard Entertainment title Overwatch. Our goal is to create the world’s premier esports league, where teams and players thrive for years to come.
+            .w3-third.w3-center
+                img(src='/images/logo.jpg', style='width:100%')
+    .w3-container.w3-light-gray#team
+        .w3-row-padding.w3-padding-64.w3-container
+            .w3-third.w3-center
+                img(src='/images/team.png', style='width:100%')
+            .w3-twothird
+                h1.w3-margin-left MEET THE TEAMS
+                h5.w3-padding-32.w3-margin-left
+                    The Overwatch League’s teams are permanent franchises representing major cities across the globe. The Atlantic and Pacific Divisions, comprising six teams each, share a fierce hunger for the Overwatch League championship, as well as for the USD $3.5 million in performance bonuses at stake in the inaugural season. Who will you root for?
+                p.w3-margin-left
+                    a.w3-button.w3-theme.w3-center(href='/team').w3-large View All Team
+
+
+    .w3-container.w3-black.w3-center.w3-padding-64
+        p
+            a.w3-button.w3-border.w3-border-white(href='#').w3-large Back to Top
+
+    script.
+        $(document).ready( function() {
+            $("#start").click(function() {
+                $('html, body').animate({
+                    scrollTop: $("#about").offset().top
+                }, 1000);
+            });
+        });
